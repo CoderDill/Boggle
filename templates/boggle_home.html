@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %}Boggle Home{% endblock%} {% block
+content%}
+<h1>Boggle!</h1>
+<section class="boggle">
+  <table class="board">
+    <tbody>
+      {%for letter in board%}
+      <tr class="cell">
+        {%for char in letter%}
+        <td>{{char}}</td>
+        {%endfor%}
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  <form class="enter-guess" method="POST">
+    <input placeholder="Enter Guess" name="guess" class="guess" />
+    <button type="submit">Submit</button>
+  </form>
+  <p>
+    Your highest score: <b>{{highscore}}</b><br />
+    in <b>{{num_of_plays}}</b> plays
+  </p>
+  <p>
+    Score: <b class="score">0</b><br />
+    Time Remaining: <b class="timer"></b>
+  </p>
+
+  <p class="message">
+    <!-- our JS will put messages here dynamically -->
+  </p>
+  <ul class="guesses">
+    <!-- our JS will put guesses here as guessed -->
+  </ul>
+</section>
+{%endblock%}

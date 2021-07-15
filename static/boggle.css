@@ -1,0 +1,28 @@
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 500%;
+}
+
+.board {
+  text-align: center;
+  border: solid 1px black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 400%;
+}
+
+.board td {
+  text-align: center;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.message.ok {
+  color: white;
+  background-color: green;
+}
+
+.message.err {
+  color: white;
+  background-color: red;
+}
