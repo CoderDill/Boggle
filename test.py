@@ -17,7 +17,7 @@ class FlaskTests(TestCase):
     def tearDown(self) -> None:
         return super().tearDown()
 
-    def test_home(self):
+    def boggleHome(self):
         """Check page load and session data"""
 
         with self.client:
@@ -25,6 +25,9 @@ class FlaskTests(TestCase):
             self.assertIn('board', session)
             self.assertIsNone(session.get('highscore'))
             self.assertIsNone(session.get('num_of_plays'))
-            self.assertIn("Your highest score:", response.data)
+            self.assertIn(b"<form", response.data)
+            self.assertIn(b'<b class="score"', response.data)
+            self.assertIn(b'<b class="timer"', response.data)
 
-    
+    def checkGuess(self):
+        """"""
